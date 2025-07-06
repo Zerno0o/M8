@@ -6,7 +6,7 @@ bot = telebot.TeleBot("токен")
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "Привет! Я Telegram бот. Здесь вы можете узнать что такое глобальное потепление, почему оно может начаться, как уменьшить вероятность появления глобального потепления. Команды - GW, reasons, photo ")
+    bot.reply_to(message, "Привет! Я Telegram бот. Здесь вы можете узнать что такое глобальное потепление, почему оно может начаться, как уменьшить вероятность появления глобального потепления. Команды - GW, reasons, photo, effects, methods_struggle")
 
 @bot.message_handler(commands=['GW'])
 def send_gw(message):
@@ -15,6 +15,14 @@ def send_gw(message):
 @bot.message_handler(commands=['reasons'])
 def send_reasons(message):
     bot.reply_to(message, "Причины появления глобального потепления на которые влияет человек: Сжигание топлива, промышленное производство, селькое хозяйство, вырубка лесов. ")
+
+bot.message_handler(commands=['effects'])
+def send_effects(message):
+    bot.reply_to(message, "Потепление климата влечёт за собой негативные последствия - повышение уровня моря, увелечение частоты и интенсивности экстремальных погодных явлений, изменения в распределении осадков, нарушение экосистем, угроза продовольственной безопастности")
+
+bot.message_handler(commands=['methods_struggle'])
+def send_methods_struggle(message):
+    bot.reply_to(message, "Решение проблемы потепления климата требует комплексного подхода. Некоторые меры - Сокращение выбросов парниковых газов, увеличение поглощения парниковых газов,адаптация к последствиям изменения климата, международное сотрудничество")
 
 @bot.message_handler(content_types=['photo'])
 def send_photo(message):
