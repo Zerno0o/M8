@@ -6,7 +6,7 @@ bot = telebot.TeleBot("токен")
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    bot.reply_to(message, "Привет! Я Telegram бот. Здесь вы можете узнать что такое глобальное потепление, почему оно может начаться, как уменьшить вероятность появления глобального потепления ")
+    bot.reply_to(message, "Привет! Я Telegram бот. Здесь вы можете узнать что такое глобальное потепление, почему оно может начаться, как уменьшить вероятность появления глобального потепления. Команды - GW, reasons, photo ")
 
 @bot.message_handler(commands=['GW'])
 def send_gw(message):
